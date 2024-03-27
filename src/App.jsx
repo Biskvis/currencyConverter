@@ -14,9 +14,9 @@ function App() {
   const currencies = ['EUR', 'USD', 'CAD', 'NZD', 'AUD', 'GBP', 'JPY', 'CHF', 'CZK', 'DKK', 'PLN', 'NOK', 'SEK'];
   
   useEffect(() => {
-    fetch('https://api.freecurrencyapi.com/v1/latest?apikey=fca_live_5UDOUrqPdNPBf7x1bGv7gmMPTiIRRCslq3VNATDN&currencies=EUR%2CUSD%2CCAD%2CNZD%2CAUD%2CGBP%2CJPY%2CCHF%2CCZK%2CDKK%2CPLN%2CNOK%2CSEK&base_currency=EUR')
+    fetch(`https://api.freecurrencyapi.com/v1/latest?apikey=${import.meta.env.VITE_API_KEY}&currencies=EUR%2CUSD%2CCAD%2CNZD%2CAUD%2CGBP%2CJPY%2CCHF%2CCZK%2CDKK%2CPLN%2CNOK%2CSEK&base_currency=EUR`)
     .then(res => res.json())
-    .then(data => setInfo(data.data))
+    .then(data => setInfo(data.data)) 
   }, [])
 
   function handleSubmit(event) {
